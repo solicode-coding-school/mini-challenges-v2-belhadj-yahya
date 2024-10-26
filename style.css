@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: bisque;
+}
+.cont{
+    width: 65vmin;
+    height: 70vmin;
+    background-color: rgb(62, 55, 55);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.states{
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.game-bord{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: grid;
+    grid-template-columns:repeat(30,1fr) ;
+    grid-template-rows: repeat(30, 1fr);
+}
+.game-bord .food {
+    border-radius: 50%;
+    background-image: url('appel.png');
+    background-size: 200%;
+    background-position: center;
+}
+
+.game-bord .head{
+    background-color: white;
+    border: 1px solid blue;
+}
+.black{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 50%;
+    top: 0;
+    left: 0;
+}
+.popDiv{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+
+.pop{
+    width: 25%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: wheat;
+    background-color: rgb(19, 19, 59);
+    border-radius: 20px;
+    position: absolute;
+}
+.pop p{
+    font-weight: bold;
+    font-size: 20px;
+}
+button{
+    width: 30%;
+    height: 20%;
+    border-radius: 20px;
+    border-color: white;
+    color: white;
+    background-color: rgb(21, 21, 83);
+}
+.play{
+    color: wheat;
+    position: absolute;
+    width: 30%;
+    height: 20vh;
+    background-color: rgb(4, 75, 4);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.play .yes-or-no button{
+   width: 10vh;
+   height: 5vh;
+   margin-top: 20px;
+}
+.black2{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 50%;
+    top: 0;
+    left: 0;
+}

@@ -1,11 +1,13 @@
-let moving; // Make `moving` a global variable to track the interval
+let moving; 
+let hightScore = document.querySelector(".high-score");
+let test = localStorage.getItem("high-score") || 0;
 
 function gameStartMenu() {
   let start = document.querySelector(".play");
   let black2 = document.querySelector(".black2");
   black2.style.display = "block";
   start.style.display = "flex";
-
+  hightScore.innerText = `High Score : ${test}`;
   let choice;
   document.addEventListener("click", function(event) {
     if (event.target.classList.contains("yes")) {
@@ -18,7 +20,7 @@ function gameStartMenu() {
       black2.style.display = "none";
       gameStartMenu();
     }
-  }, { once: true }); // This ensures the event listener only runs once
+  }, { once: true }); 
 }
 
 gameStartMenu();
@@ -34,10 +36,11 @@ function startGame(choice) {
     let gameState = false;
     let score = 0;
 
-    let test = localStorage.getItem("high-score") || 0;
+    
+
+  
     let playBord = document.querySelector(".game-bord");
     let scorespan = document.querySelector(".score");
-    let hightScore = document.querySelector(".high-score");
 
     hightScore.innerText = `High Score : ${test}`;
 
@@ -47,9 +50,9 @@ function startGame(choice) {
     };
 
     let gameOver = function() {
-      clearInterval(moving); // Stop the movement interval
-      document.removeEventListener("keydown", changeDirection); // Remove keydown event listener
-      gameStartMenu(); // Show the start menu again
+      clearInterval(moving); 
+      document.removeEventListener("keydown", changeDirection); 
+      gameStartMenu(); 
     };
 
     let changeDirection = function(e) {
@@ -66,6 +69,7 @@ function startGame(choice) {
         movementX = 1;
         movementY = 0;
       }
+     
       inGameItems();
     };
 
@@ -73,6 +77,7 @@ function startGame(choice) {
       if (gameState) {
         return gameOver();
       }
+      scorespan.innerText = `score : ${score}`;
       let playObjects = `<div class='food' style='grid-area:${foodY} / ${foodX}'></div>`;
       if (snakeHeadX === foodX && snakeHeadY === foodY) {
         foodplace();
